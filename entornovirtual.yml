@@ -1,0 +1,12 @@
+- name: Crear entorno virtual en Python
+
+  # fijamos localhost
+  hosts: localhost
+
+  # activamos superuser
+  become: yes
+
+  tasks:
+    - name: crear entorno virtual de python
+      command: python3 -m venv venv
+

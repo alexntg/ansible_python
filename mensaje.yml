@@ -1,0 +1,12 @@
+- name: Ejecutar mensaje Python
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Ejecutar mensaje
+      command: /bin/bash -c "source venv/bin/activate && python /ansible/mensaje.py"
+      register: output
+
+    - name: Mostrar salida
+      debug:
+        var: output.stdout
+
